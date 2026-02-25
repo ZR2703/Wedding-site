@@ -8,6 +8,8 @@ const WEDDING_ISO = "2026-06-12T15:00:00+04:00"; // Armenia time (AMT). Adjust i
 const LINKS = {
   churchMaps: "https://www.google.com/maps/search/?api=1&query=Geghard+Monastery",
   restaurantMaps: "https://www.google.com/maps/search/?api=1&query=Vivaldi+Hall+24%2F44+Azatutyan+Ave+Yerevan",
+  churchMapsYandex: "https://yandex.com/maps/?text=Geghard+Monastery",
+  restaurantMapsYandex: "https://yandex.com/maps/?text=Vivaldi+Hall+24%2F44+Azatutyan+Ave+Yerevan",
   // Optional: if you want a taxi link, you can use a generic "open maps" or a local taxi app URL.
 };
 
@@ -17,12 +19,17 @@ function format2(n: number) {
 
 function useCountdown(targetISO: string) {
   const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
+    setNow(Date.now());
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  if (now === null) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
 
   const diff = Math.max(0, target - now);
   const totalSeconds = Math.floor(diff / 1000);
@@ -129,7 +136,10 @@ export default function Page() {
       <section className="split min-h-[70vh] md:h-[calc(100svh-3rem)]">
         <div className="flex items-center order-2 md:order-1">
           <div className="container-page py-14 md:py-20">
-            <h1 className="text-5xl md:text-7xl leading-[0.95]">
+            <h1
+              className="text-5xl md:text-7xl leading-[0.95]"
+              style={{ fontFamily: 'var(--font-names, "Times New Roman"), serif' }}
+            >
               Ruben <br /> &amp; Zara
             </h1>
 
@@ -166,10 +176,12 @@ export default function Page() {
           className="object-cover"
         />
         <div className="container-page relative z-10 min-h-[48vh] md:min-h-[60vh] py-16 md:py-20 text-center flex items-center justify-center">
-          <div className="max-w-3xl text-white">
+          <div
+            className="max-w-3xl text-white"
+            style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
+          >
           <h2 className="text-3xl md:text-5xl">DEAR FAMILY AND FRIENDS!</h2>
-          <p className="mt-6 leading-relaxed text-white/85">
-            <br /><br />
+          <p className="mt-6 text-lg md:text-xl leading-relaxed text-white/85">
             With joyful hearts,
             <br />
             we invite you to share one of the most meaningful days of our lives.
@@ -198,7 +210,7 @@ export default function Page() {
         </div>
 
         {/* CHURCH */}
-        <div className="mt-12 split">
+        <div className="mt-12 grid grid-cols-2 gap-0">
           <div className="flex items-center">
             <div className="container-page py-14 md:py-16">
               <h3 className="text-3xl md:text-5xl">Geghard Monastery</h3>
@@ -208,7 +220,10 @@ export default function Page() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a className="btn" href={LINKS.churchMaps} target="_blank" rel="noreferrer">
-                  Go to map
+                  Google map
+                </a>
+                <a className="btn" href={LINKS.churchMapsYandex} target="_blank" rel="noreferrer">
+                  Yandex map
                 </a>
               </div>
 
@@ -219,16 +234,16 @@ export default function Page() {
             </div>
           </div>
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/church.jpg" alt="Geghard Monastery" fill className="object-cover" />
+            <Image src="/churchUNI.jpg" alt="Geghard Monastery" fill className="object-cover" />
           </div>
         </div>
 
         {/* RESTAURANT */}
-        <div className="split">
-          <div className="relative min-h-[380px] md:min-h-[520px] order-2 md:order-1">
-            <Image src="/restaurant.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
+        <div className="grid grid-cols-2 gap-0">
+          <div className="relative min-h-[380px] md:min-h-[520px]">
+            <Image src="/restaurantUNI.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
           </div>
-          <div className="flex items-center order-1 md:order-2">
+          <div className="flex items-center">
             <div className="container-page py-14 md:py-16">
               <h3 className="text-3xl md:text-5xl">Vivaldi Hall</h3>
               <p className="mt-4 text-black/70">
@@ -237,7 +252,10 @@ export default function Page() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a className="btn" href={LINKS.restaurantMaps} target="_blank" rel="noreferrer">
-                  Go to map
+                  Google map
+                </a>
+                <a className="btn" href={LINKS.restaurantMapsYandex} target="_blank" rel="noreferrer">
+                  Yandex map
                 </a>
               </div>
 
@@ -311,7 +329,7 @@ export default function Page() {
               */}
               <form
                 className="mt-8 space-y-4"
-                action="https://formspree.io/f/yourFormId"   /* <-- replace this */
+                action="https://formspree.io/f/xqednkql"   /* <-- replace this */
                 method="POST"
               >
                 <div>
@@ -339,7 +357,7 @@ export default function Page() {
                 </div>
 
                 <div>
-                  <label className="text-sm text-black/70">Number of guests</label>
+                  <label className="text-sm text-black/70">Number of guests who are joining you</label>
                   <input
                     name="guest_count"
                     type="number"
@@ -402,21 +420,17 @@ export default function Page() {
           <div className="border border-black/10 p-10 text-center">
             <h2 className="text-3xl md:text-5xl">GROUP CHATS</h2>
             <p className="mt-4 text-black/70">
-              Join our group chats for updates and coordination.
+              Join our group chats to share photo's and video's after the wedding.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a className="btn" href="https://t.me/your_telegram_link" target="_blank" rel="noreferrer">
+              <a className="btn" href="https://t.me/+qx18lkoimtM1ZTY0" target="_blank" rel="noreferrer">
                 Telegram group
               </a>
-              <a className="btn" href="https://chat.whatsapp.com/your_whatsapp_link" target="_blank" rel="noreferrer">
+              <a className="btn" href="https://chat.whatsapp.com/Fxkvrqci6vO2BNCv2IA2kq" target="_blank" rel="noreferrer">
                 WhatsApp group
               </a>
             </div>
-
-            <p className="mt-4 text-xs text-black/55">
-              Replace these links with your real group invite URLs.
-            </p>
           </div>
         </div>
       </section>
@@ -439,7 +453,7 @@ export default function Page() {
       </section>
 
       <footer className="py-10 text-center text-xs text-black/50">
-        © {new Date().getFullYear()} Ruben & Zara
+        © {new Date().getFullYear()} R&Z
       </footer>
     </main>
   );
