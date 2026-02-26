@@ -329,7 +329,7 @@ export default function Page() {
               */}
               <form
                 className="mt-8 space-y-4"
-                action="https://formspree.io/f/xqednkql"   
+                action="https://formspree.io/f/mreajdkn"
                 method="POST"
               >
                 <div>
@@ -439,24 +439,29 @@ export default function Page() {
             If you have any questions, please contact our wedding planner.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              className="btn !border-white !text-white hover:!bg-white hover:!text-black"
-              href="https://t.me/angelinasag25"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contact on Telegram
-            </a>
-            <a
-              className="btn !border-white !text-white hover:!bg-white hover:!text-black"
-              href="https://wa.me/79181520333"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contact on WhatsApp
-            </a>
-          </div>
+          <details className="mt-8">
+            <summary className="btn inline-flex !border-white !text-white hover:!bg-white hover:!text-black cursor-pointer">
+              Contact us
+            </summary>
+            <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                className="btn !border-white !text-white hover:!bg-white hover:!text-black"
+                href="https://t.me/angelinasag25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Telegram
+              </a>
+              <a
+                className="btn !border-white !text-white hover:!bg-white hover:!text-black"
+                href="https://wa.me/79181520333"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </details>
         </div>
       </section>
 
