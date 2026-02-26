@@ -170,7 +170,7 @@ export default function Page() {
       {/* INVITE TEXT */}
       <section className="relative border-t-[100px] border-white overflow-hidden">
         <Image
-          src="/inviteUNI4.jpg"
+          src="/invitezwart.jpg"
           alt="Invitation background"
           fill
           className="object-cover"
@@ -234,14 +234,14 @@ export default function Page() {
             </div>
           </div>
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/churchUNI4.jpg" alt="Geghard Monastery" fill className="object-cover" />
+            <Image src="/churchUNI2.jpg" alt="Geghard Monastery" fill className="object-cover" />
           </div>
         </div>
 
         {/* RESTAURANT */}
         <div className="grid grid-cols-2 gap-0">
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/restaurantUNI3.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
+            <Image src="/restaurantUNI2.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
           </div>
           <div className="flex items-center">
             <div className="container-page py-14 md:py-16">
@@ -405,10 +405,6 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-
-              <p className="mt-6 text-xs text-black/55">
-                Tip: Replace the form <code>action</code> URL with your Formspree endpoint to receive submissions.
-              </p>
             </div>
           </div>
         </div>
@@ -443,10 +439,22 @@ export default function Page() {
             If you have any questions, please contact our wedding planner.
           </p>
 
-          {/* Replace with your planner name / phone / email */}
-          <div className="mt-8">
-            <a className="btn !border-white !text-white hover:!bg-white hover:!text-black" href="mailto:planner@example.com">
-              Contact us
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              className="btn !border-white !text-white hover:!bg-white hover:!text-black"
+              href="https://t.me/angelinasag25"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact on Telegram
+            </a>
+            <a
+              className="btn !border-white !text-white hover:!bg-white hover:!text-black"
+              href="https://wa.me/79181520333"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact on WhatsApp
             </a>
           </div>
         </div>
