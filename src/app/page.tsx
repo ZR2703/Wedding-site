@@ -158,7 +158,7 @@ export default function Page() {
 
         <div className="relative min-h-[420px] md:min-h-0 order-1 md:order-2">
           <Image
-            src="/hero.jpg"
+            src="/heroUNI2.jpg"
             alt="Ruben and Zara"
             fill
             className="object-cover"
@@ -170,7 +170,7 @@ export default function Page() {
       {/* INVITE TEXT */}
       <section className="relative border-t-[100px] border-white overflow-hidden">
         <Image
-          src="/invitezwart.jpg"
+          src="/inviteUNI4.jpg"
           alt="Invitation background"
           fill
           className="object-cover"
@@ -234,14 +234,14 @@ export default function Page() {
             </div>
           </div>
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/churchUNI.jpg" alt="Geghard Monastery" fill className="object-cover" />
+            <Image src="/churchUNI4.jpg" alt="Geghard Monastery" fill className="object-cover" />
           </div>
         </div>
 
         {/* RESTAURANT */}
         <div className="grid grid-cols-2 gap-0">
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/restaurantUNI.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
+            <Image src="/restaurantUNI3.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
           </div>
           <div className="flex items-center">
             <div className="container-page py-14 md:py-16">
@@ -271,7 +271,7 @@ export default function Page() {
       {/* TIMELINE */}
       <section id="timing" className="split">
         <div className="relative min-h-[420px] md:min-h-[560px]">
-          <Image src="/timing.jpg" alt="Timing" fill className="object-cover grayscale" />
+          <Image src="/timingUNI2.jpg" alt="Timing" fill className="object-cover grayscale" />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-white text-4xl md:text-6xl font-serif tracking-wide">
@@ -329,7 +329,7 @@ export default function Page() {
               */}
               <form
                 className="mt-8 space-y-4"
-                action="https://formspree.io/f/xqednkql"   /* <-- replace this */
+                action="https://formspree.io/f/xqednkql"   
                 method="POST"
               >
                 <div>
