@@ -420,7 +420,7 @@ export default function Page() {
 
         <div className="relative min-h-[420px] md:min-h-0 order-1 md:order-2">
           <Image
-            src="/hero1.jpg"
+            src="/invite4.jpg"
             alt="Ruben and Zara"
             fill
             className="object-cover"
@@ -430,34 +430,41 @@ export default function Page() {
       </section>
 
       {/* INVITE TEXT */}
-      <section className="relative border-t-[100px] border-white overflow-hidden">
-        <Image
-          src="/invite2.jpg"
-          alt="Invitation background"
-          fill
-          className="object-cover"
-        />
-        <div className="container-page relative z-10 min-h-[48vh] md:min-h-[60vh] py-16 md:py-20 text-center flex items-center justify-center">
-          <div
-            className="max-w-3xl text-black"
-            style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
-          >
-            <h2 className="text-3xl md:text-5xl">{t.inviteTitle}</h2>
-            <p className="mt-6 text-lg md:text-xl leading-relaxed text-black/85">
-              {t.inviteText[0]}
-              <br />
-              {t.inviteText[1]}
-              <br /><br />
-              {t.inviteText[2]}
-              <br />
-              {t.inviteText[3]}
-              <br />
-              {t.inviteText[4]}
-              <br /><br />
-              {t.inviteText[5]}
-              <br /><br />
-              {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}<strong>June 12, 2026</strong>.
-            </p>
+      <section className="section">
+        <div className="container-page">
+          <div className="relative min-h-[48vh] md:min-h-[60vh] overflow-hidden card-soft">
+            <Image
+              src="/hero8.jpg"
+              alt="Invitation background"
+              fill
+              className="object-cover"
+            />
+            <div className="relative z-10 flex min-h-[48vh] md:min-h-[60vh] items-center justify-center px-8 py-16 md:px-12 md:py-20 text-center">
+              <div
+                className="max-w-3xl text-white"
+                style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
+              >
+                <h2 className="text-3xl md:text-5xl">{t.inviteTitle}</h2>
+                <p
+                  className="mt-6 text-lg md:text-xl leading-relaxed text-white/85"
+                  style={{ fontFamily: 'var(--font-invite-body, Georgia), serif' }}
+                >
+                  {t.inviteText[0]}
+                  <br />
+                  {t.inviteText[1]}
+                  <br /><br />
+                  {t.inviteText[2]}
+                  <br />
+                  {t.inviteText[3]}
+                  <br />
+                  {t.inviteText[4]}
+                  <br /><br />
+                  {t.inviteText[5]}
+                  <br /><br />
+                  {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}<strong>June 12, 2026</strong>.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -560,10 +567,12 @@ export default function Page() {
       </section>
 
       {/* QUOTE BAND */}
-      <section className="bg-black text-white">
-        <div className="container-page py-14 text-center">
-          <div className="smallcaps text-white/80">
-            {t.quote}
+      <section className="section">
+        <div className="container-page">
+          <div className="border border-black/10 p-10 text-center">
+            <div className="smallcaps text-black/80">
+              {t.quote}
+            </div>
           </div>
         </div>
       </section>
@@ -573,7 +582,7 @@ export default function Page() {
         <div className="container-page">
           <div className="split card-soft">
             <div className="relative min-h-[420px] md:min-h-[520px]">
-              <Image src="/questionnair1.jpg" alt="Ruben & Zara" fill className="object-cover" />
+              <Image src="/hero7.jpg" alt="Ruben & Zara" fill className="object-cover" />
             </div>
 
             <div className="p-8 md:p-12">
@@ -722,6 +731,16 @@ export default function Page() {
             </div>
           </details>
         </div>
+      </section>
+
+      {/* CLOSING IMAGE */}
+      <section className="relative min-h-[340px] md:min-h-[520px] overflow-hidden">
+        <Image
+          src="/hero5.jpg"
+          alt="Closing photo"
+          fill
+          className="object-cover"
+        />
       </section>
 
       <footer className="py-10 text-center text-xs text-black/50">

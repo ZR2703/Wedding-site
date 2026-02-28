@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Cinzel, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Inter, Cinzel, Cormorant_Garamond, Libre_Baskerville } from "next/font/google";
 
 const serif = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -14,6 +14,11 @@ const invite = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
   variable: "--font-invite",
 });
+const inviteBody = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-invite-body",
+});
 
 export const metadata: Metadata = {
   title: "Ruben & Zara — Wedding",
@@ -23,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${sans.variable} ${names.variable} ${invite.variable} antialiased`}>
+      <body className={`${serif.variable} ${sans.variable} ${names.variable} ${invite.variable} ${inviteBody.variable} antialiased`}>
         {children}
       </body>
     </html>
