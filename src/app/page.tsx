@@ -420,7 +420,7 @@ export default function Page() {
 
         <div className="relative min-h-[420px] md:min-h-0 order-1 md:order-2">
           <Image
-            src="/heroUNI2.jpg"
+            src="/hero1.jpg"
             alt="Ruben and Zara"
             fill
             className="object-cover"
@@ -432,18 +432,18 @@ export default function Page() {
       {/* INVITE TEXT */}
       <section className="relative border-t-[100px] border-white overflow-hidden">
         <Image
-          src="/invitezwart.jpg"
+          src="/invite2.jpg"
           alt="Invitation background"
           fill
           className="object-cover"
         />
         <div className="container-page relative z-10 min-h-[48vh] md:min-h-[60vh] py-16 md:py-20 text-center flex items-center justify-center">
           <div
-            className="max-w-3xl text-white"
+            className="max-w-3xl text-black"
             style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
           >
             <h2 className="text-3xl md:text-5xl">{t.inviteTitle}</h2>
-            <p className="mt-6 text-lg md:text-xl leading-relaxed text-white/85">
+            <p className="mt-6 text-lg md:text-xl leading-relaxed text-black/85">
               {t.inviteText[0]}
               <br />
               {t.inviteText[1]}
@@ -493,14 +493,14 @@ export default function Page() {
             </div>
           </div>
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/churchUNI2.jpg" alt="Geghard Monastery" fill className="object-cover" />
+            <Image src="/church1.jpg" alt="Geghard Monastery" fill className="object-cover" />
           </div>
         </div>
 
         {/* RESTAURANT */}
         <div className="grid grid-cols-2 gap-0">
           <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/restaurantUNI2.jpg" alt="Vivaldi Hall" fill className="object-cover grayscale" />
+            <Image src="/restaurant1.jpg" alt="Vivaldi Hall" fill className="object-cover" />
           </div>
           <div className="flex items-center">
             <div className="container-page py-14 md:py-16">
@@ -530,7 +530,7 @@ export default function Page() {
       {/* TIMELINE */}
       <section id="timing" className="split">
         <div className="relative min-h-[420px] md:min-h-[560px]">
-          <Image src="/timingUNI2.jpg" alt="Timing" fill className="object-cover grayscale" />
+          <Image src="/timing1.jpg" alt="Timing" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-white text-4xl md:text-6xl font-serif tracking-wide">
@@ -573,7 +573,7 @@ export default function Page() {
         <div className="container-page">
           <div className="split card-soft">
             <div className="relative min-h-[420px] md:min-h-[520px]">
-              <Image src="/questionnair.jpg" alt="Ruben & Zara" fill className="object-cover" />
+              <Image src="/questionnair1.jpg" alt="Ruben & Zara" fill className="object-cover" />
             </div>
 
             <div className="p-8 md:p-12">
