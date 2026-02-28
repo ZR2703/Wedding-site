@@ -45,7 +45,7 @@ const COPY = {
     restaurantName: "Vivaldi Hall",
     restaurantAddress: "24/44 Azatutyan Ave, Yerevan",
     restaurantNote: "Parking is available on site.",
-    timingTitle: "TIMING",
+    timingTitle: "Timeline",
     eventChurch: "Church",
     eventRestaurant: "Restaurant",
     eventEnd: "End of the evening",
@@ -420,7 +420,7 @@ export default function Page() {
 
         <div className="relative min-h-[420px] md:min-h-0 order-1 md:order-2">
           <Image
-            src="/invite4.jpg"
+            src="/hero6.jpg"
             alt="Ruben and Zara"
             fill
             className="object-cover"
@@ -434,19 +434,19 @@ export default function Page() {
         <div className="container-page">
           <div className="relative min-h-[48vh] md:min-h-[60vh] overflow-hidden card-soft">
             <Image
-              src="/hero8.jpg"
+              src="/invite6.jpg"
               alt="Invitation background"
               fill
               className="object-cover"
             />
             <div className="relative z-10 flex min-h-[48vh] md:min-h-[60vh] items-center justify-center px-8 py-16 md:px-12 md:py-20 text-center">
               <div
-                className="max-w-3xl text-white"
+                className="max-w-3xl bg-white/70 px-6 py-8 md:px-10 md:py-10 text-black"
                 style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
               >
                 <h2 className="text-3xl md:text-5xl">{t.inviteTitle}</h2>
                 <p
-                  className="mt-6 text-lg md:text-xl leading-relaxed text-white/85"
+                  className="mt-6 text-lg md:text-xl leading-relaxed text-black/85"
                   style={{ fontFamily: 'var(--font-invite-body, Georgia), serif' }}
                 >
                   {t.inviteText[0]}
@@ -537,8 +537,7 @@ export default function Page() {
       {/* TIMELINE */}
       <section id="timing" className="split">
         <div className="relative min-h-[420px] md:min-h-[560px]">
-          <Image src="/timing2.jpg" alt="Timing" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/35" />
+          <Image src="/timing3.jpg" alt="Timing" fill className="object-cover" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-white text-4xl md:text-6xl font-serif tracking-wide">
               {t.timingTitle}
@@ -582,7 +581,7 @@ export default function Page() {
         <div className="container-page">
           <div className="split card-soft">
             <div className="relative min-h-[420px] md:min-h-[520px]">
-              <Image src="/hero7.jpg" alt="Ruben & Zara" fill className="object-cover" />
+              <Image src="/rsvp.jpg" alt="Ruben & Zara" fill className="object-cover" />
             </div>
 
             <div className="p-8 md:p-12">
