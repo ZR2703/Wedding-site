@@ -395,74 +395,94 @@ export default function Page() {
       ) : null}
 
       {/* HERO */}
-      <section className="split min-h-[70vh] md:h-[calc(100svh-3rem)]">
-        <div className="flex items-center order-2 md:order-1">
-          <div className="container-page py-14 md:py-20">
-            <h1
-              className="text-5xl md:text-7xl leading-[0.95]"
-              style={{ fontFamily: 'var(--font-names, "Times New Roman"), serif' }}
-            >
-              Ruben <br /> &amp; Zara
-            </h1>
+      <section className="relative min-h-[calc(100svh-3rem)] overflow-hidden">
+        <Image
+          src="/hero9.jpg"
+          alt="Ruben and Zara"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/20" />
 
-            <div className="mt-10 text-sm tracking-[0.15em] uppercase text-black/70">
-              12.06.2026 <br />
-              {t.heroCity}
-            </div>
+        <div className="relative z-10 flex min-h-[calc(100svh-3rem)] flex-col items-center justify-center px-6 pb-36 md:pb-40 text-center text-white">
+          <h1
+            className="text-5xl md:text-8xl leading-[0.82] tracking-[0.03em]"
+            style={{ fontFamily: 'var(--font-hero-names, "Times New Roman"), serif' }}
+          >
+            <span className="block">RUBEN</span>
+            <span className="block text-3xl md:text-5xl leading-none my-3 md:my-4 tracking-[0.05em]">&amp;</span>
+            <span className="block">ZARA</span>
+          </h1>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a className="btn" href="#locations">{t.navLocations}</a>
-              <a className="btn" href="#timing">{t.navTimeline}</a>
-              <a className="btn" href="#rsvp">{t.navRsvp}</a>
-            </div>
+          <div className="mt-5 text-[11px] md:text-sm uppercase tracking-[0.28em] text-white/85">
+            Yerevan, Armenia
           </div>
-        </div>
 
-        <div className="relative min-h-[420px] md:min-h-0 order-1 md:order-2">
-          <Image
-            src="/hero6.jpg"
-            alt="Ruben and Zara"
-            fill
-            className="object-cover"
-            priority
-          />
+          <div className="mt-3 text-[11px] md:text-sm uppercase tracking-[0.3em] text-white/90">
+            12.06.2026
+          </div>
+
+          <a
+            className="scroll-cue absolute inset-x-0 bottom-8 mx-auto w-fit"
+            href="#invite"
+          >
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.35em]">Scroll Down</span>
+          </a>
         </div>
       </section>
 
       {/* INVITE TEXT */}
-      <section className="section">
+      <section id="invite" className="section">
         <div className="container-page">
-          <div className="relative min-h-[48vh] md:min-h-[60vh] overflow-hidden card-soft">
-            <Image
-              src="/invite6.jpg"
-              alt="Invitation background"
-              fill
-              className="object-cover"
-            />
+          <div className="relative min-h-[48vh] md:min-h-[60vh] border border-black/10 bg-[#f8f4ee] p-4 md:p-6 overflow-hidden">
+            <div className="pointer-events-none absolute inset-3 overflow-hidden md:inset-5">
+              <Image
+                src="/invite1.jpg"
+                alt=""
+                fill
+                className="scale-110 object-cover"
+              />
+              <div className="absolute inset-0 bg-[#f8f4ee]/82" />
+            </div>
+            <div className="absolute inset-3 border border-black/10 md:inset-5" />
             <div className="relative z-10 flex min-h-[48vh] md:min-h-[60vh] items-center justify-center px-8 py-16 md:px-12 md:py-20 text-center">
               <div
-                className="max-w-3xl bg-white/70 px-6 py-8 md:px-10 md:py-10 text-black"
+                className="max-w-2xl text-black"
                 style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
               >
-                <h2 className="text-3xl md:text-5xl">{t.inviteTitle}</h2>
-                <p
-                  className="mt-6 text-lg md:text-xl leading-relaxed text-black/85"
+                <div className="mx-auto h-px w-16 bg-black/20 md:w-20" />
+                <div className="mt-6 text-xs md:text-sm uppercase tracking-[0.35em] text-black/55">
+                  R &amp; Z
+                </div>
+                <h2 className="mt-6 text-4xl md:text-6xl">{t.inviteTitle}</h2>
+                <div
+                  className="mt-8 space-y-6 text-black/80"
                   style={{ fontFamily: 'var(--font-invite-body, Georgia), serif' }}
                 >
-                  {t.inviteText[0]}
-                  <br />
-                  {t.inviteText[1]}
-                  <br /><br />
-                  {t.inviteText[2]}
-                  <br />
-                  {t.inviteText[3]}
-                  <br />
-                  {t.inviteText[4]}
-                  <br /><br />
-                  {t.inviteText[5]}
-                  <br /><br />
-                  {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}<strong>June 12, 2026</strong>.
-                </p>
+                  <p className="text-base md:text-lg italic leading-[1.9]">
+                    {t.inviteText[0]}
+                    <br />
+                    {t.inviteText[1]}
+                  </p>
+                  <p className="text-base md:text-lg leading-[1.95]">
+                    {t.inviteText[2]}
+                    <br />
+                    {t.inviteText[3]}
+                    <br />
+                    {t.inviteText[4]}
+                  </p>
+                  <p className="text-base md:text-lg leading-[1.9]">
+                    {t.inviteText[5]}
+                  </p>
+                </div>
+                <div className="mt-8 text-xs md:text-sm uppercase tracking-[0.32em] text-black/55">
+                  {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}
+                </div>
+                <div className="mt-3 text-xl md:text-2xl text-black/90">
+                  <strong>June 12, 2026</strong>
+                </div>
+                <div className="mx-auto mt-8 h-px w-16 bg-black/20 md:w-20" />
               </div>
             </div>
           </div>
@@ -470,95 +490,108 @@ export default function Page() {
       </section>
 
       {/* LOCATIONS (Church + Restaurant) */}
-      <section id="locations" className="section">
+      <section id="locations" className="section bg-[#faf7f2]">
         <div className="container-page">
           <SectionTitle title={t.locationsTitle} />
-        </div>
+          <div className="mt-12 space-y-8 md:space-y-10">
+            {/* CHURCH */}
+            <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
+              <div className="flex items-center order-2 md:order-1">
+                <div className="w-full p-8 md:p-12">
+                  <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.eventChurch}</div>
+                  <h3 className="mt-5 text-3xl md:text-5xl">{t.churchName}</h3>
+                  <p className="mt-3 text-sm md:text-base uppercase tracking-[0.18em] text-black/55">
+                    {t.churchArea}
+                  </p>
 
-        {/* CHURCH */}
-        <div className="mt-12 grid grid-cols-2 gap-0">
-          <div className="flex items-center">
-            <div className="container-page py-14 md:py-16">
-              <h3 className="text-3xl md:text-5xl">{t.churchName}</h3>
-              <p className="mt-4 text-black/70">
-                {t.churchArea}
-              </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a className="btn !px-5 !py-2.5" href={LINKS.churchMaps} target="_blank" rel="noreferrer">
+                      {t.googleMap}
+                    </a>
+                    <a className="btn !px-5 !py-2.5" href={LINKS.churchMapsYandex} target="_blank" rel="noreferrer">
+                      {t.yandexMap}
+                    </a>
+                  </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a className="btn" href={LINKS.churchMaps} target="_blank" rel="noreferrer">
-                  {t.googleMap}
-                </a>
-                <a className="btn" href={LINKS.churchMapsYandex} target="_blank" rel="noreferrer">
-                  {t.yandexMap}
-                </a>
+                  <div className="mt-8 h-px w-16 bg-black/15" />
+                  <p className="mt-6 text-sm text-black/60">
+                    {t.churchNote}
+                  </p>
+                </div>
               </div>
-
-              <div className="hr-center" />
-              <p className="text-sm text-black/60 text-center">
-                {t.churchNote}
-              </p>
+              <div className="relative min-h-[320px] md:min-h-[500px] order-1 md:order-2">
+                <Image src="/church1.jpg" alt="Geghard Monastery" fill className="object-cover" />
+              </div>
             </div>
-          </div>
-          <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/church1.jpg" alt="Geghard Monastery" fill className="object-cover" />
-          </div>
-        </div>
 
-        {/* RESTAURANT */}
-        <div className="grid grid-cols-2 gap-0">
-          <div className="relative min-h-[380px] md:min-h-[520px]">
-            <Image src="/restaurant1.jpg" alt="Vivaldi Hall" fill className="object-cover" />
-          </div>
-          <div className="flex items-center">
-            <div className="container-page py-14 md:py-16">
-              <h3 className="text-3xl md:text-5xl">{t.restaurantName}</h3>
-              <p className="mt-4 text-black/70">
-                {t.restaurantAddress}
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a className="btn" href={LINKS.restaurantMaps} target="_blank" rel="noreferrer">
-                  {t.googleMap}
-                </a>
-                <a className="btn" href={LINKS.restaurantMapsYandex} target="_blank" rel="noreferrer">
-                  {t.yandexMap}
-                </a>
+            {/* RESTAURANT */}
+            <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
+              <div className="relative min-h-[320px] md:min-h-[500px]">
+                <Image src="/restaurant1.jpg" alt="Vivaldi Hall" fill className="object-cover" />
               </div>
+              <div className="flex items-center">
+                <div className="w-full p-8 md:p-12">
+                  <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.eventRestaurant}</div>
+                  <h3 className="mt-5 text-3xl md:text-5xl">{t.restaurantName}</h3>
+                  <p className="mt-3 text-sm md:text-base uppercase tracking-[0.12em] text-black/55">
+                    {t.restaurantAddress}
+                  </p>
 
-              <div className="hr-center" />
-              <p className="text-sm text-black/60 text-center">
-                {t.restaurantNote}
-              </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a className="btn !px-5 !py-2.5" href={LINKS.restaurantMaps} target="_blank" rel="noreferrer">
+                      {t.googleMap}
+                    </a>
+                    <a className="btn !px-5 !py-2.5" href={LINKS.restaurantMapsYandex} target="_blank" rel="noreferrer">
+                      {t.yandexMap}
+                    </a>
+                  </div>
+
+                  <div className="mt-8 h-px w-16 bg-black/15" />
+                  <p className="mt-6 text-sm text-black/60">
+                    {t.restaurantNote}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* TIMELINE */}
-      <section id="timing" className="split">
-        <div className="relative min-h-[420px] md:min-h-[560px]">
-          <Image src="/timing3.jpg" alt="Timing" fill className="object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-white text-4xl md:text-6xl font-serif tracking-wide">
-              {t.timingTitle}
+      <section id="timing" className="section bg-[#faf7f2]">
+        <div className="container-page">
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
+            <div className="relative min-h-[320px] md:min-h-[560px]">
+              <Image src="/timing3.jpg" alt="Timing" fill className="object-cover object-[center_60%]" />
             </div>
-          </div>
-        </div>
 
-        <div className="flex items-center">
-          <div className="container-page py-14 md:py-16">
-            <div className="space-y-9">
-              <div>
-                <div className="text-3xl md:text-4xl font-serif">12:45</div>
-                <div className="text-black/70">{t.eventChurch}</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-serif">16:00</div>
-                <div className="text-black/70">{t.eventRestaurant}</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-serif">23:00</div>
-                <div className="text-black/70">{t.eventEnd}</div>
+            <div className="flex items-center">
+              <div className="w-full p-8 md:p-12">
+                <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+                <h2 className="mt-5 text-4xl md:text-6xl">{t.timingTitle}</h2>
+                <div className="mt-8 h-px w-16 bg-black/15" />
+
+                <div className="relative mt-10 space-y-10 pl-8">
+                  <div className="absolute bottom-2 left-2 top-2 w-px bg-black/12" />
+
+                  <div className="relative">
+                    <div className="absolute left-[-1.9rem] top-3 h-4 w-4 rounded-full border border-black/20 bg-white" />
+                    <div className="text-3xl md:text-4xl font-serif">12:45</div>
+                    <div className="mt-2 text-sm uppercase tracking-[0.24em] text-black/55">{t.eventChurch}</div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute left-[-1.9rem] top-3 h-4 w-4 rounded-full border border-black/20 bg-white" />
+                    <div className="text-3xl md:text-4xl font-serif">16:00</div>
+                    <div className="mt-2 text-sm uppercase tracking-[0.24em] text-black/55">{t.eventRestaurant}</div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute left-[-1.9rem] top-3 h-4 w-4 rounded-full border border-black/20 bg-white" />
+                    <div className="text-3xl md:text-4xl font-serif">23:00</div>
+                    <div className="mt-2 text-sm uppercase tracking-[0.24em] text-black/55">{t.eventEnd}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -566,9 +599,9 @@ export default function Page() {
       </section>
 
       {/* QUOTE BAND */}
-      <section className="section">
+      <section className="section bg-[#faf7f2]">
         <div className="container-page">
-          <div className="border border-black/10 p-10 text-center">
+          <div className="border border-black/10 bg-white p-10 text-center">
             <div className="smallcaps text-black/80">
               {t.quote}
             </div>
@@ -577,44 +610,46 @@ export default function Page() {
       </section>
 
       {/* RSVP + COUNTDOWN */}
-      <section id="rsvp" className="section">
+      <section id="rsvp" className="section bg-[#faf7f2]">
         <div className="container-page">
-          <div className="split card-soft">
-            <div className="relative min-h-[420px] md:min-h-[520px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
+            <div className="relative min-h-[360px] md:min-h-[640px]">
               <Image src="/rsvp.jpg" alt="Ruben & Zara" fill className="object-cover" />
             </div>
 
             <div className="p-8 md:p-12">
-              <h2 className="text-3xl md:text-5xl">{t.rsvpTitle}</h2>
-              <p className="mt-4 text-black/70">
+              <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+              <h2 className="mt-5 text-4xl md:text-6xl">{t.rsvpTitle}</h2>
+              <p className="mt-5 text-black/70 leading-relaxed">
                 {t.rsvpText} <strong>May 1, 2026</strong>.
               </p>
+              <div className="mt-8 h-px w-16 bg-black/15" />
 
               {/* IMPORTANT:
                  This form is front-end only. To actually receive responses,
                  set the action to Formspree (recommended) or a Google Apps Script endpoint.
               */}
               <form
-                className="mt-8 space-y-4"
+                className="mt-8 space-y-5"
                 action="https://formspree.io/f/mreajdkn"
                 method="POST"
               >
                 <div>
-                  <label className="text-sm text-black/70">{t.formNameLabel}</label>
+                  <label className="text-[11px] uppercase tracking-[0.18em] text-black/55">{t.formNameLabel}</label>
                   <input
                     name="name"
                     required
-                    className="mt-2 w-full border border-black/20 px-4 py-3 outline-none focus:border-black"
+                    className="mt-2 w-full border border-black/15 bg-[#fcfaf6] px-4 py-3.5 outline-none transition focus:border-black"
                     placeholder={t.formNamePlaceholder}
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm text-black/70">{t.formAttendanceLabel}</label>
+                  <label className="text-[11px] uppercase tracking-[0.18em] text-black/55">{t.formAttendanceLabel}</label>
                   <select
                     name="attendance"
                     required
-                    className="mt-2 w-full border border-black/20 px-4 py-3 outline-none focus:border-black bg-white"
+                    className="mt-2 w-full border border-black/15 bg-[#fcfaf6] px-4 py-3.5 outline-none transition focus:border-black"
                   >
                     <option value="">{t.formAttendancePlaceholder}</option>
                     <option value="Yes">{t.formAttendanceYes}</option>
@@ -624,49 +659,50 @@ export default function Page() {
                 </div>
 
                 <div>
-                  <label className="text-sm text-black/70">{t.formGuestCountLabel}</label>
+                  <label className="text-[11px] uppercase tracking-[0.18em] text-black/55">{t.formGuestCountLabel}</label>
                   <input
                     name="guest_count"
                     type="number"
                     min={1}
-                    className="mt-2 w-full border border-black/20 px-4 py-3 outline-none focus:border-black"
+                    className="mt-2 w-full border border-black/15 bg-[#fcfaf6] px-4 py-3.5 outline-none transition focus:border-black"
                     placeholder="1"
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm text-black/70">{t.formGuestNamesLabel}</label>
+                  <label className="text-[11px] uppercase tracking-[0.18em] text-black/55">{t.formGuestNamesLabel}</label>
                   <textarea
                     name="guest_names"
-                    rows={3}
-                    className="mt-2 w-full border border-black/20 px-4 py-3 outline-none focus:border-black"
+                    rows={4}
+                    className="mt-2 w-full border border-black/15 bg-[#fcfaf6] px-4 py-3.5 outline-none transition focus:border-black"
                     placeholder={t.formGuestNamesPlaceholder}
                   />
                 </div>
 
-                <button className="btn w-full" type="submit">
+                <button className="btn w-full !py-3.5" type="submit">
                   {t.submitSurvey}
                 </button>
               </form>
 
-              <div className="hr-center" />
+              <div className="mt-10 h-px w-full bg-black/10" />
 
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif">{t.countdownTitle}</div>
+              <div className="mt-10 text-center">
+                <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+                <div className="mt-4 text-3xl md:text-4xl font-serif">{t.countdownTitle}</div>
                 <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="border border-black/20 py-4 px-2">
+                  <div className="border border-black/12 bg-[#fcfaf6] py-4 px-2">
                     <div className="text-3xl font-serif">{countdown.days}</div>
                     <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.days}</div>
                   </div>
-                  <div className="border border-black/20 py-4 px-2">
+                  <div className="border border-black/12 bg-[#fcfaf6] py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.hours)}</div>
                     <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.hours}</div>
                   </div>
-                  <div className="border border-black/20 py-4 px-2">
+                  <div className="border border-black/12 bg-[#fcfaf6] py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.minutes)}</div>
                     <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.minutes}</div>
                   </div>
-                  <div className="border border-black/20 py-4 px-2">
+                  <div className="border border-black/12 bg-[#fcfaf6] py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.seconds)}</div>
                     <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.seconds}</div>
                   </div>
@@ -678,19 +714,21 @@ export default function Page() {
       </section>
 
       {/* GROUP CHATS */}
-      <section className="section">
+      <section className="section bg-[#faf7f2]">
         <div className="container-page">
-          <div className="border border-black/10 p-10 text-center">
-            <h2 className="text-3xl md:text-5xl">{t.chatsTitle}</h2>
-            <p className="mt-4 text-black/70">
+          <div className="border border-black/10 bg-white p-8 md:p-12 text-center">
+            <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+            <h2 className="mt-5 text-4xl md:text-6xl">{t.chatsTitle}</h2>
+            <p className="mt-5 max-w-2xl mx-auto text-black/70 leading-relaxed">
               {t.chatsText}
             </p>
+            <div className="mx-auto mt-8 h-px w-16 bg-black/15" />
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a className="btn" href="https://t.me/+qx18lkoimtM1ZTY0" target="_blank" rel="noreferrer">
+              <a className="btn !px-7 !py-3" href="https://t.me/+qx18lkoimtM1ZTY0" target="_blank" rel="noreferrer">
                 {t.telegramGroup}
               </a>
-              <a className="btn" href="https://chat.whatsapp.com/Fxkvrqci6vO2BNCv2IA2kq" target="_blank" rel="noreferrer">
+              <a className="btn !px-7 !py-3" href="https://chat.whatsapp.com/Fxkvrqci6vO2BNCv2IA2kq" target="_blank" rel="noreferrer">
                 {t.whatsappGroup}
               </a>
             </div>
@@ -699,36 +737,41 @@ export default function Page() {
       </section>
 
       {/* CONTACTS */}
-      <section className="bg-black text-white">
-        <div className="container-page py-16 text-center">
-          <h2 className="text-3xl md:text-5xl">{t.contactsTitle}</h2>
-          <p className="mt-4 text-white/85">
-            {t.contactsText}
-          </p>
+      <section className="section bg-[#faf7f2] pt-0">
+        <div className="container-page">
+          <div className="border border-black/10 bg-[#f8f4ee] p-8 md:p-12 text-center">
+            <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+            <h2 className="mt-5 text-4xl md:text-6xl text-black">{t.contactsTitle}</h2>
+            <p className="mt-5 max-w-2xl mx-auto text-black/70 leading-relaxed">
+              {t.contactsText}
+            </p>
 
-          <details className="mt-8">
-            <summary className="btn inline-flex !border-white !text-white hover:!bg-white hover:!text-black cursor-pointer">
-              {t.contactUs}
-            </summary>
-            <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                className="btn !border-white !text-white hover:!bg-white hover:!text-black"
-                href="https://t.me/angelinasag25"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Telegram
-              </a>
-              <a
-                className="btn !border-white !text-white hover:!bg-white hover:!text-black"
-                href="https://wa.me/79181520333"
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-              </a>
-            </div>
-          </details>
+            <div className="mx-auto mt-8 h-px w-16 bg-black/15" />
+
+            <details className="mt-8">
+              <summary className="btn inline-flex cursor-pointer">
+                {t.contactUs}
+              </summary>
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  className="btn !px-7 !py-3"
+                  href="https://t.me/angelinasag25"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Telegram
+                </a>
+                <a
+                  className="btn !px-7 !py-3"
+                  href="https://wa.me/79181520333"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -742,7 +785,7 @@ export default function Page() {
         />
       </section>
 
-      <footer className="py-10 text-center text-xs text-black/50">
+      <footer className="bg-[#f8f4ee] py-10 text-center text-xs text-black/50">
         {"\u00A9"} {new Date().getFullYear()} R&amp;Z
       </footer>
 

@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Cinzel, Cormorant_Garamond, Libre_Baskerville } from "next/font/google";
+import { Playfair_Display, Inter, Cinzel, Cormorant_Garamond, Libre_Baskerville, Bodoni_Moda } from "next/font/google";
 
 const serif = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -19,6 +19,11 @@ const inviteBody = Libre_Baskerville({
   weight: ["400", "700"],
   variable: "--font-invite-body",
 });
+const heroNames = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-hero-names",
+});
 
 export const metadata: Metadata = {
   title: "Ruben & Zara — Wedding",
@@ -28,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${sans.variable} ${names.variable} ${invite.variable} ${inviteBody.variable} antialiased`}>
+      <body className={`${serif.variable} ${sans.variable} ${names.variable} ${invite.variable} ${inviteBody.variable} ${heroNames.variable} antialiased`}>
         {children}
       </body>
     </html>

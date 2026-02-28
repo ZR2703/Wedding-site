@@ -25,6 +25,14 @@ h3 {
 body {
   font-family: var(--font-sans);
 }
+@keyframes scrollCueFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
 
 /* ✅ Tailwind v4: put @apply inside @layer */
 @layer components {
@@ -54,5 +62,13 @@ body {
 
   .smallcaps {
     @apply text-xs tracking-[0.25em] uppercase text-black/70;
+  }
+  .scroll-cue {
+    @apply inline-flex flex-col items-center gap-3 text-white/90;
+    animation: scrollCueFloat 1.8s ease-in-out infinite;
+  }
+  .scroll-cue::after {
+    content: "";
+    @apply block h-10 w-px bg-white/80;
   }
 }
