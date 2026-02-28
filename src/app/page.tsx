@@ -653,22 +653,22 @@ export default function Page() {
 
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-serif">{t.countdownTitle}</div>
-                <div className="mt-6 grid grid-cols-4 gap-3">
-                  <div className="border border-black/20 py-4">
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div className="border border-black/20 py-4 px-2">
                     <div className="text-3xl font-serif">{countdown.days}</div>
-                    <div className="text-xs uppercase tracking-[0.2em] text-black/60 mt-1">{t.days}</div>
+                    <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.days}</div>
                   </div>
-                  <div className="border border-black/20 py-4">
+                  <div className="border border-black/20 py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.hours)}</div>
-                    <div className="text-xs uppercase tracking-[0.2em] text-black/60 mt-1">{t.hours}</div>
+                    <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.hours}</div>
                   </div>
-                  <div className="border border-black/20 py-4">
+                  <div className="border border-black/20 py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.minutes)}</div>
-                    <div className="text-xs uppercase tracking-[0.2em] text-black/60 mt-1">{t.minutes}</div>
+                    <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.minutes}</div>
                   </div>
-                  <div className="border border-black/20 py-4">
+                  <div className="border border-black/20 py-4 px-2">
                     <div className="text-3xl font-serif">{format2(countdown.seconds)}</div>
-                    <div className="text-xs uppercase tracking-[0.2em] text-black/60 mt-1">{t.seconds}</div>
+                    <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] text-black/60">{t.seconds}</div>
                   </div>
                 </div>
               </div>
