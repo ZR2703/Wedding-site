@@ -433,31 +433,38 @@ export default function Page() {
       </section>
 
       {/* INVITE TEXT */}
-      <section id="invite" className="section">
+      <section id="invite" className="section bg-[#faf7f2]">
         <div className="container-page">
-          <div className="relative min-h-[48vh] md:min-h-[60vh] border border-black/10 bg-[#f8f4ee] p-4 md:p-6 overflow-hidden">
-            <div className="pointer-events-none absolute inset-3 overflow-hidden md:inset-5">
+          <div className="grid grid-cols-1 overflow-hidden border border-black/10 bg-white md:grid-cols-2">
+            <div className="relative min-h-[340px] md:min-h-[620px]">
               <Image
-                src="/invite1.jpg"
+                src="/invite2.jpg"
                 alt=""
                 fill
-                className="scale-110 object-cover"
+                className="object-cover object-[center_24%] md:object-center"
               />
-              <div className="absolute inset-0 bg-[#f8f4ee]/82" />
-            </div>
-            <div className="absolute inset-3 border border-black/10 md:inset-5" />
-            <div className="relative z-10 flex min-h-[48vh] md:min-h-[60vh] items-center justify-center px-8 py-16 md:px-12 md:py-20 text-center">
-              <div
-                className="max-w-2xl text-black"
-                style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
-              >
-                <div className="mx-auto h-px w-16 bg-black/20 md:w-20" />
-                <div className="mt-6 text-xs md:text-sm uppercase tracking-[0.35em] text-black/55">
-                  R &amp; Z
+              <div className="absolute inset-0 bg-gradient-to-b from-black/32 via-black/10 to-transparent" />
+              <div className="absolute left-6 top-6 border border-white/30 bg-black/10 px-4 py-3 text-white backdrop-blur-[2px] md:left-8 md:top-8">
+                <div className="text-sm uppercase tracking-[0.34em] text-white/90 md:text-base">
+                  12.06.2026
                 </div>
-                <h2 className="mt-6 text-4xl md:text-6xl">{t.inviteTitle}</h2>
+              </div>
+            </div>
+            <div className="flex items-center bg-[#fcfaf6]">
+              <div className="w-full px-8 py-12 text-center md:px-12 md:py-16 md:text-left">
+                <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
+                <div className="mt-5 h-px w-16 bg-black/15 md:mx-0 mx-auto" />
                 <div
-                  className="mt-8 space-y-6 text-black/80"
+                  className="mt-6 text-black"
+                  style={{ fontFamily: 'var(--font-invite, "Times New Roman"), serif' }}
+                >
+                  <div className="text-xs md:text-sm uppercase tracking-[0.35em] text-black/55">
+                    R &amp; Z
+                  </div>
+                  <h2 className="mt-5 text-4xl md:text-6xl leading-[0.95]">{t.inviteTitle}</h2>
+                </div>
+                <div
+                  className="mt-8 space-y-6 text-black/75"
                   style={{ fontFamily: 'var(--font-invite-body, Georgia), serif' }}
                 >
                   <p className="text-base md:text-lg italic leading-[1.9]">
@@ -476,13 +483,13 @@ export default function Page() {
                     {t.inviteText[5]}
                   </p>
                 </div>
-                <div className="mt-8 text-xs md:text-sm uppercase tracking-[0.32em] text-black/55">
+                <div className="mt-10 text-xs md:text-sm uppercase tracking-[0.32em] text-black/55">
                   {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}
                 </div>
-                <div className="mt-3 text-xl md:text-2xl text-black/90">
-                  <strong>June 12, 2026</strong>
+                <div className="mt-3 text-2xl md:text-3xl text-black/90" style={{ fontFamily: 'var(--font-hero-names, "Times New Roman"), serif' }}>
+                  June 12, 2026
                 </div>
-                <div className="mx-auto mt-8 h-px w-16 bg-black/20 md:w-20" />
+                <div className="mt-8 h-px w-16 bg-black/15 md:mx-0 mx-auto" />
               </div>
             </div>
           </div>
@@ -520,14 +527,14 @@ export default function Page() {
                 </div>
               </div>
               <div className="relative min-h-[320px] md:min-h-[500px] order-1 md:order-2">
-                <Image src="/church1.jpg" alt="Geghard Monastery" fill className="object-cover" />
+                <Image src="/churchx.jpg" alt="Geghard Monastery" fill className="object-cover" />
               </div>
             </div>
 
             {/* RESTAURANT */}
             <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
               <div className="relative min-h-[320px] md:min-h-[500px]">
-                <Image src="/restaurant1.jpg" alt="Vivaldi Hall" fill className="object-cover" />
+                <Image src="/restaurantx.jpg" alt="Vivaldi Hall" fill className="object-cover" />
               </div>
               <div className="flex items-center">
                 <div className="w-full p-8 md:p-12">
@@ -562,7 +569,7 @@ export default function Page() {
         <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
             <div className="relative min-h-[320px] md:min-h-[560px]">
-              <Image src="/timing3.jpg" alt="Timing" fill className="object-cover object-[center_60%]" />
+              <Image src="/timingx.jpg" alt="Timing" fill className="object-cover object-[center_60%]" />
             </div>
 
             <div className="flex items-center">
