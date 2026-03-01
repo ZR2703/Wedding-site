@@ -569,7 +569,7 @@ export default function Page() {
         <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
             <div className="relative min-h-[320px] md:min-h-[560px]">
-              <Image src="/timingx.jpg" alt="Timing" fill className="object-cover object-[center_60%]" />
+              <Image src="/timing4.jpg" alt="Timing" fill className="object-cover object-[center_60%]" />
             </div>
 
             <div className="flex items-center">
@@ -621,7 +621,7 @@ export default function Page() {
         <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 border border-black/10 bg-white">
             <div className="relative min-h-[360px] md:min-h-[640px]">
-              <Image src="/rsvp.jpg" alt="Ruben & Zara" fill className="object-cover" />
+              <Image src="/rsvp3.jpg" alt="Ruben & Zara" fill className="object-cover" />
             </div>
 
             <div className="p-8 md:p-12">
@@ -785,7 +785,7 @@ export default function Page() {
       {/* CLOSING IMAGE */}
       <section className="relative min-h-[340px] md:min-h-[520px] overflow-hidden">
         <Image
-          src="/hero5.jpg"
+          src="/end.jpg"
           alt="Closing photo"
           fill
           className="object-cover"
