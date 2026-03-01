@@ -36,6 +36,7 @@ const COPY = {
       "We look forward to welcoming you",
     ],
     inviteDateLabel: "on",
+    inviteDateText: "June 12, 2026",
     locationsTitle: "Locations",
     churchName: "Geghard Monastery",
     churchArea: "Geghard",
@@ -96,6 +97,7 @@ const COPY = {
       "Անհամբեր սպասում ենք ձեզ",
     ],
     inviteDateLabel: "",
+    inviteDateText: "June 12, 2026",
     locationsTitle: "Վայրեր",
     churchName: "Գեղարդի վանք",
     churchArea: "Գեղարդ",
@@ -146,16 +148,17 @@ const COPY = {
     musicText: "Это можно изменить в любой момент, обновив страницу.",
     yes: "Да",
     no: "Нет",
-    inviteTitle: "ДОРОГИЕ РОДНЫЕ И ДРУЗЬЯ!",
+    inviteTitle: "ДОРОГИЕ НАШИ РОДНЫЕ И БЛИЗКИЕ!",
     inviteText: [
-      "С радостью в сердце,",
-      "приглашаем вас разделить один из самых важных дней нашей жизни.",
-      "Мы женимся,",
-      "и для нас будет очень важно",
+      "С радостью приглашаем вас",
+      "на один из счастливейших дней нашей жизни.",
+      "Мы женимся",
+      "и для нас очень важно",
       "разделить этот особенный момент вместе с вами.",
-      "С нетерпением ждем встречи с вами",
+      "Ждем вас с нетерпением!",
     ],
     inviteDateLabel: "",
+    inviteDateText: "12 июня 2026 года",
     locationsTitle: "Локации",
     churchName: "Монастырь Гегард",
     churchArea: "Гегард",
@@ -171,7 +174,7 @@ const COPY = {
     eventEnd: "Завершение вечера",
     quote: "ЛЮБОВЬ ЭТО НЕ ПРОСТО ЧУВСТВО, ЭТО ЦЕЛЫЙ МИР. МЫ СЧАСТЛИВЫ РАЗДЕЛИТЬ ЭТОТ МИР С ВАМИ!",
     rsvpTitle: "RSVP",
-    rsvpText: "Просим подтвердить ваше присутствие и ответить на несколько важных вопросов до",
+    rsvpText: "Пожалуйста, подтвердите ваше присутствие и ответьте на несколько вопросов до 1 мая 2026 года.",
     formNameLabel: "Ваше имя",
     formNamePlaceholder: "Полное имя",
     formAttendanceLabel: "Сможете присутствовать?",
@@ -188,7 +191,7 @@ const COPY = {
     hours: "часов",
     minutes: "минут",
     seconds: "секунд",
-    chatsTitle: "ГРУППОВЫЕ ЧАТЫ",
+    chatsTitle: "ОСТАВАЙТЕСЬ НА СВЯЗИ!",
     chatsText: "Присоединяйтесь к нашим чатам, чтобы делиться фото и видео после свадьбы.",
     telegramGroup: "Группа Telegram",
     whatsappGroup: "Группа WhatsApp",
@@ -487,7 +490,7 @@ export default function Page() {
                   {t.inviteDateLabel ? `${t.inviteDateLabel} ` : ""}
                 </div>
                 <div className="mt-3 text-2xl md:text-3xl text-black/90" style={{ fontFamily: 'var(--font-hero-names, "Times New Roman"), serif' }}>
-                  June 12, 2026
+                  {t.inviteDateText}
                 </div>
                 <div className="mt-8 h-px w-16 bg-black/15 md:mx-0 mx-auto" />
               </div>
@@ -628,7 +631,7 @@ export default function Page() {
               <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
               <h2 className="mt-5 text-4xl md:text-6xl">{t.rsvpTitle}</h2>
               <p className="mt-5 text-black/70 leading-relaxed">
-                {t.rsvpText} <strong>May 1, 2026</strong>.
+                {language === "ru" ? t.rsvpText : <>{t.rsvpText} <strong>May 1, 2026</strong>.</>}
               </p>
               <div className="mt-8 h-px w-16 bg-black/15" />
 
@@ -783,13 +786,17 @@ export default function Page() {
       </section>
 
       {/* CLOSING IMAGE */}
-      <section className="relative min-h-[340px] md:min-h-[520px] overflow-hidden">
-        <Image
-          src="/end.jpg"
-          alt="Closing photo"
-          fill
-          className="object-cover"
-        />
+      <section className="section bg-[#faf7f2] pt-0">
+        <div className="container-page">
+          <div className="relative min-h-[340px] overflow-hidden border border-black/10 bg-white md:min-h-[520px]">
+            <Image
+              src="/end.jpg"
+              alt="Closing photo"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       <footer className="bg-[#f8f4ee] py-10 text-center text-xs text-black/50">
