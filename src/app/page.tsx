@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
@@ -53,7 +53,7 @@ const COPY = {
     quote: "LOVE ISN'T JUST A FEELING; IT'S A WHOLE WORLD. WE'RE HAPPY TO SHARE THIS WORLD WITH YOU!",
     rsvpTitle: "RSVP",
     rsvpText: "We ask you to confirm your attendance and answer a few important questions by",
-    formNameLabel: "Your name",
+    formNameLabel: "Your firstname and lastname",
     formNamePlaceholder: "Full name",
     formAttendanceLabel: "Will you be able to attend?",
     formAttendancePlaceholder: "Select",
@@ -93,17 +93,17 @@ const COPY = {
       "հրավիրում ենք ձեզ կիսելու մեր կյանքի ամենակարևոր օրերից մեկը։",
       "Մենք ամուսնանում ենք,",
       "և մեզ համար շատ կարևոր կլինի",
-      "այս հատուկ պահը միասին տոնել ձեր հետ։",
+      "այս հատուկ պահը միասին տոնել ձեզ հետ։",
       "Անհամբեր սպասում ենք ձեզ",
     ],
     inviteDateLabel: "",
-    inviteDateText: "June 12, 2026",
-    locationsTitle: "Վայրեր",
+    inviteDateText: "Հունիս 12, 2026",
+    locationsTitle: "Locations",
     churchName: "Գեղարդի վանք",
     churchArea: "Գեղարդ",
     googleMap: "Google քարտեզ",
     yandexMap: "Yandex քարտեզ",
-    churchNote: "Խնդրում ենք այս վայր այցելել հարմար կոշիկով։",
+    churchNote: "Խնդրում ենք այս վայրը այցելել հարմար կոշիկով։",
     restaurantName: "Վիվալդի Հոլ",
     restaurantAddress: "Ազատության պող. 24/44, Երևան",
     restaurantNote: "Կայանատեղին հասանելի է տեղում։",
@@ -114,7 +114,7 @@ const COPY = {
     quote: "ՍԵՐԸ ՊԱՐԶԱՊԵՍ ԶԳԱՑՄՈՒՆՔ ՉԷ, ԱՅԼ ԱՄԲՈՂՋ ԱՇԽԱՐՀ։ ԵՎ ՈՒՐԱԽ ԵՆՔ ԱՅՍ ԱՇԽԱՐՀԸ ԿԻՍԵԼ ՁԵԶ ՀԵՏ։",
     rsvpTitle: "Մասնակցություն",
     rsvpText: "Խնդրում ենք մինչև",
-    formNameLabel: "Ձեր անունը",
+    formNameLabel: "Ձեր անունը ազգանունը",
     formNamePlaceholder: "Ամբողջական անուն",
     formAttendanceLabel: "Կկարողանա՞ք մասնակցել։",
     formAttendancePlaceholder: "Ընտրել",
@@ -175,7 +175,7 @@ const COPY = {
     quote: "ЛЮБОВЬ ЭТО НЕ ПРОСТО ЧУВСТВО, ЭТО ЦЕЛЫЙ МИР. МЫ СЧАСТЛИВЫ РАЗДЕЛИТЬ ЭТОТ МИР С ВАМИ!",
     rsvpTitle: "RSVP",
     rsvpText: "Пожалуйста, подтвердите ваше присутствие и ответьте на несколько вопросов до 1 мая 2026 года.",
-    formNameLabel: "Ваше имя",
+    formNameLabel: "Ваше Имя и Фамилия",
     formNamePlaceholder: "Полное имя",
     formAttendanceLabel: "Сможете присутствовать?",
     formAttendancePlaceholder: "Выберите",
@@ -578,7 +578,11 @@ export default function Page() {
             <div className="flex items-center">
               <div className="w-full p-8 md:p-12">
                 <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
-                <h2 className="mt-5 text-4xl md:text-6xl">{t.timingTitle}</h2>
+                <h2
+                  className={`mt-5 ${language === "hy" ? "text-2xl md:text-4xl leading-tight" : "text-4xl md:text-6xl"}`}
+                >
+                  {t.timingTitle}
+                </h2>
                 <div className="mt-8 h-px w-16 bg-black/15" />
 
                 <div className="relative mt-10 space-y-10 pl-8">
@@ -629,9 +633,23 @@ export default function Page() {
 
             <div className="p-8 md:p-12">
               <div className="text-xs uppercase tracking-[0.32em] text-black/45">{t.topBar}</div>
-              <h2 className="mt-5 text-4xl md:text-6xl">{t.rsvpTitle}</h2>
+              <h2
+                className={`mt-5 ${language === "hy" ? "text-2xl md:text-4xl leading-tight" : "text-4xl md:text-6xl"}`}
+              >
+                {t.rsvpTitle}
+              </h2>
               <p className="mt-5 text-black/70 leading-relaxed">
-                {language === "ru" ? t.rsvpText : <>{t.rsvpText} <strong>May 1, 2026</strong>.</>}
+                {language === "ru" ? (
+                  <>
+                    Пожалуйста, подтвердите ваше присутствие и ответьте на несколько вопросов до{" "}
+                    <strong>1 мая 2026 года</strong>.
+                  </>
+                ) : (
+                  <>
+                    {t.rsvpText}{" "}
+                    <strong>{language === "hy" ? "Մայիսի 1, 2026" : "May 1, 2026"}</strong>.
+                  </>
+                )}
               </p>
               <div className="mt-8 h-px w-16 bg-black/15" />
 
