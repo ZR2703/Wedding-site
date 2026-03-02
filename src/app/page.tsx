@@ -78,7 +78,7 @@ const COPY = {
     contactUs: "Contact us",
   },
   hy: {
-    topBar: "Հարսանիքի օր",
+    topBar: "Հարսանիք",
     heroCity: "Երևան, Հայաստան",
     navLocations: "Վայրեր",
     navTimeline: "Ժամանակացույց",
