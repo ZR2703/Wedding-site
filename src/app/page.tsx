@@ -808,7 +808,7 @@ export default function Page() {
         <div className="container-page">
           <div className="relative min-h-[340px] overflow-hidden border border-black/10 bg-white md:min-h-[520px]">
             <Image
-              src="/end.jpg"
+              src="/end2.jpg"
               alt="Closing photo"
               fill
               className="object-cover"
