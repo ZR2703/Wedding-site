@@ -106,7 +106,7 @@ const COPY = {
     churchNote: "Խնդրում ենք այս վայրը այցելել հարմար կոշիկով։",
     restaurantName: "Վիվալդի Հոլ",
     restaurantAddress: "Ազատության պող. 24/44, Երևան",
-    restaurantNote: "Կայանատեղին հասանելի է տեղում։",
+    restaurantNote: "Հասանելի է կայանատեղի։",
     timingTitle: "ԺԱՄԱՆԱԿԱՑՈՒՅՑ",
     eventChurch: "Եկեղեցի",
     eventRestaurant: "Ռեստորան",
