@@ -28,6 +28,12 @@ const heroNames = Bodoni_Moda({
 export const metadata: Metadata = {
   title: "Ruben & Zara — Wedding",
   description: "Wedding website for Ruben & Zara",
+  openGraph: {
+    images: ["/hero6.jpg"],
+  },
+  twitter: {
+    images: ["/hero6.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
